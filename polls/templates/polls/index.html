@@ -1,0 +1,18 @@
+{% if latest_question_list %}
+<title>polls</title>
+    <ul>
+    <table id="id_list_table">
+    {% for question in latest_question_list %}
+        <tr><td><li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li></td></tr>
+    {% endfor %}
+    </table>
+    <br>
+    <li><h3><a href="{% url 'polls:delete' %}">Delete Question</a></h3></li>
+    <li><h3><a href="{% url 'polls:input' %}">Input</a></h3></li>
+    <li><h3><a href="{% url 'polls:table' %}">Table</a></h3></li>
+    <li><h3><a href="{% url 'polls:column' %}">Column</a></h3></li>
+    </ul>
+{% else %}
+
+    <p>No polls are available.</p>
+{% endif %}

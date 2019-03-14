@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Input Type</h2>
+<form action= "{% url 'polls:show' %}" method="post">
+    {% csrf_token %}
+First name:<br>
+<input type="text" name="firstname" value="Kornkanok">
+<br>
+Last name:<br>
+<input type="text" name="lastname" value="Sumran"><br><br>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br><br>
+    Birthday:
+  <input type="date" name="bday"><br><br>
+      E-mail:
+  <input type="email" name="email"><br><br>
+    Year (between 1 and 4):
+  <input type="number" name="year" min="1" max="4">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
